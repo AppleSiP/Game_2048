@@ -83,23 +83,23 @@ namespace _2048WinFormsApp
             }
             else
             {
-                var message = $"Игра закончена!\nВы проиграли.\nВаш результат: {result.Score}";
+                var message = $"РРіСЂР° Р·Р°РєРѕРЅС‡РµРЅР°!\nР’С‹ РїСЂРѕРёРіСЂР°Р»Рё.\nР’Р°С€ СЂРµР·СѓР»СЊС‚Р°С‚: {result.Score}";
                 if (Win())
                 {
-                    message = $"Поздравляю!\nВы победили.\nВаш результат: {result.Score}";
+                    message = $"РџРѕР·РґСЂР°РІР»СЏСЋ!\nР’С‹ РїРѕР±РµРґРёР»Рё.\nР’Р°С€ СЂРµР·СѓР»СЊС‚Р°С‚: {result.Score}";
                     result.Status = "Winner";
                 }
                 ResultManager.Save(result, DataProvider.Results);
-                MessageBox.Show(message, "Конец игры!", MessageBoxButtons.OK);
+                MessageBox.Show(message, "РљРѕРЅРµС† РёРіСЂС‹!", MessageBoxButtons.OK);
             }
         }
         private void ShowScore()
         {
-            maxScoreLabel.Text = $"Лучший счёт: {maxScore}";
-            scoreLabel.Text = $"Счёт: {result.Score}";
+            maxScoreLabel.Text = $"Р›СѓС‡С€РёР№ СЃС‡С‘С‚: {maxScore}";
+            scoreLabel.Text = $"РЎС‡С‘С‚: {result.Score}";
             if (maxScore < result.Score)
             {
-                maxScoreLabel.Text = $"Лучший счёт: {result.Score}";
+                maxScoreLabel.Text = $"Р›СѓС‡С€РёР№ СЃС‡С‘С‚: {result.Score}";
                 maxScoreLabel.ForeColor = Color.Black;
                 scoreLabel.ForeColor = Color.Red;
             }
@@ -119,24 +119,24 @@ namespace _2048WinFormsApp
             return false;
         }
 
-        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        private void РІС‹С…РѕРґToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void перезапускToolStripMenuItem_Click(object sender, EventArgs e)
+        private void РїРµСЂРµР·Р°РїСѓСЃРєToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
-        private void правилаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void РїСЂР°РІРёР»Р°ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataProvider.ShowText(DataProvider.Rules, "Правила");
+            DataProvider.ShowText(DataProvider.Rules, "РџСЂР°РІРёР»Р°");
         }
-        private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СЃС‚Р°С‚РёСЃС‚РёРєР°ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new ResultsForm().ShowDialog();
         }
-        private void размерыПоляToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СЂР°Р·РјРµСЂС‹РџРѕР»СЏToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var optionSizeForm = new OptionSizeForm();
             optionSizeForm.ShowDialog();
